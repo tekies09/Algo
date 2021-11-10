@@ -1,4 +1,4 @@
-# 트리,너비우선탐색,깊이우선탐색
+# 트리,너비우선탐색,깊이우선탐색 , 힙
 
 
 - 트리
@@ -15,3 +15,8 @@
 
 1.  유기농배추 (https://www.acmicpc.net/problem/1012)
 2.  적록색약 (https://www.acmicpc.net/problem/10026) 
+
+- 힙
+
+1.  최소힙 (https://www.acmicpc.net/problem/1715)
+2.  카드정렬하기 (https://www.acmicpc.net/problem/1927) 
