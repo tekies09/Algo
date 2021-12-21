@@ -9,7 +9,7 @@
 1. 별찍기 10 (https://www.acmicpc.net/problem/2447)
 2. 박스채우기 (https://www.acmicpc.net/problem/1493)
 
--분할정복
+-백트래킹
 1. SubSetSumByBackT 백트래킹을 이용한 부분집합의 합 구하기 
 2. 암호만들기 (https://www.acmicpc.net/problem/1759)
 3. 로또 (https://www.acmicpc.net/problem/6603)
