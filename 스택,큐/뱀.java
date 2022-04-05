@@ -1,106 +1,94 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+package Queue;
+
+import java.util.*;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class 뱀 {
+
 	static class snake{
 		int x;
 		int y;
 		public snake(int x, int y) {
-			super();
 			this.x = x;
 			this.y = y;
 		}
-		
 	}
+	static class command {
+		int x;
+		int type;
+		public command(int x, int type) {
+			this.x = x;
+			this.type = type;
+		}
 
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	}
+	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
-		  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		  StringTokenizer st;
-		  int[] dx = { 0, 1,  0, -1 }; //우 하 좌 상   
-		  int[] dy = { 1, 0, -1,  0 };
-		  int size = Integer.parseInt(br.readLine());
-		  int apple = Integer.parseInt(br.readLine());
-		  int[][] array = new int[size][size];
-		  
-		  for(int i=0;i<apple;i++) {
-			  st = new StringTokenizer(br.readLine());
-			  int x= Integer.parseInt(st.nextToken());
-			  int y= Integer.parseInt(st.nextToken());
-			  array[x-1][y-1] = 1;
-		  }
-		  
-		  int command = Integer.parseInt(br.readLine());
-				  
-		  Queue<snake> queue = new LinkedList<snake>();
-		  queue.offer(new snake(0,0));
-		  int dir = 0;
-		  int nowx = 0;
-		  int nowy = 0;
-		  int timecount = 0;
-		  boolean flag = false;
-		  
-		  Queue<int[]> cqueue = new LinkedList<int[]>();
-		  
-		  
-		  for(int i=0;i<command;i++) {
-			  st = new StringTokenizer(br.readLine());
-			  int x= Integer.parseInt(st.nextToken());
-			  String k = st.nextToken();
-			  
-			  if(k.equals("D")) {
-				  dir++;
-				  if(dir==4) dir = 0;
-			  }
-			  else if(k.equals("L")) {
-				  dir--;
-				  if(dir==-1) dir = 3;
-			  }
-			  int[] c = new int[] {dir,x};
-			  cqueue.offer(c); 
-		  }
-		  dir = 0;
-		  while(true) {
-			  
-			  timecount++;
-			  nowx += dx[dir];
-			  nowy += dy[dir];
-			  if(nowx>=size || nowy >= size || nowx<0 || nowy<0) {
-				  break;
-			  }
-			  Iterator iter = queue.iterator();
-			  while(iter.hasNext()) {
-				  snake s = (snake) iter.next();
-				  if(s.x==nowx && s.y == nowy) {
-					  flag= true;
-				  }
-			  }
-			  if(flag) {
-				  break;
-			  }
-			  if(array[nowx][nowy]!=1) {
-				  queue.poll(); //사과가없다면 꼬리자르기
-			  }
-			  else {
-				  array[nowx][nowy] = 0;
-			  }
-			  queue.offer(new snake(nowx,nowy)); // 한칸전진
-			  
-			  
-			  if(!cqueue.isEmpty()) { // 무브가 끝나고 방향전환기능
-				  if(cqueue.peek()[1]==timecount) {
-					  dir = cqueue.poll()[0];
-				  }
-			  }
-		  }
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		int K = Integer.parseInt(br.readLine());
+		
+		boolean[][] apple = new boolean[N+1][N+1];
+		boolean[][] snake = new boolean[N+1][N+1];
+		
+		for(int i=0;i<K;i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int X = Integer.parseInt(st.nextToken());
+			int Y = Integer.parseInt(st.nextToken());
+			apple[X][Y] =true;
+		}
+		int L = Integer.parseInt(br.readLine());
+		
+		Queue<snake> sq = new LinkedList<>();
+		
+		Queue<command> cq= new LinkedList<>(); 
+		
+		for(int i=0;i<L;i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int X = Integer.parseInt(st.nextToken());
+			String k = st.nextToken();
+			int T=-1;
+			if(k.equals("D")) T=1;
+			cq.add(new command(X,T));
+		}
+		
+		sq.add(new snake(1,1));
+		snake[1][1] = true;
+		int nowd = 1;
+		int nowx=1;
+		int nowy=1;
+		int time = 0;
+		int dx[] = new int[] {-1,0,1,0 };
+		int dy[] = new int[] {0,1,0,-1};
+		while(true) {
+			time++; //
 
-		  System.out.println(timecount);
+			int newx = nowx + dx[nowd];
+			int newy = nowy + dy[nowd];
+			
+			//벽에 부딪힘체크
+			if(newx==0 || newy ==0 || newx == N+1 || newy ==N+1) break;
+			//자기 몸에 부딪혔을까요 ?
+			if(snake[newx][newy]) break;
+			//사과 못먹기
+			if(!apple[newx][newy]) {
+				snake tail = sq.poll();
+				snake[tail.x][tail.y] =false;
+			}
+			else {
+				apple[newx][newy] = false;
+			}
+			snake[newx][newy] = true;
+			sq.add(new snake(newx,newy));
+			if(!cq.isEmpty()&&cq.peek().x==time) nowd += cq.poll().type;
+			if(nowd<0) nowd+=4;
+			if(nowd>3) nowd%=4;
+			nowx = newx;
+			nowy = newy;
+		}
+		
+		System.out.println(time);
 	}
 
 }

@@ -16,3 +16,8 @@
 2. 프린터큐 (https://www.acmicpc.net/problem/1966)
 3. 마이쮸나눠주기 => 일정 갯수의 아이템을 큐를이용해 배분받는 예제
 4. QueueTest => 단순 큐 사용 예제
+5. 가희와은행(https://www.acmicpc.net/problem/22234)
+6. 앵무새(https://www.acmicpc.net/problem/14713)
+7. 트럭(https://www.acmicpc.net/problem/13335)
+8. 세훈이의선물가게(https://www.acmicpc.net/problem/17225)
+9. 좋은친구(https://www.acmicpc.net/problem/3078)
