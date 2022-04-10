@@ -11,6 +11,9 @@
 5. 브라우저스택응용 => url 방문 , 뒤로가기 , 앞으로가기 기능을 스택을 이용하여 간단구현
 6. 쇠막대기 (https://www.acmicpc.net/problem/10799)
 7. 에디터 (https://www.acmicpc.net/problem/1046)
+8. 오큰수 (https://www.acmicpc.net/problem/17298)
+9. 옥상정원꾸미기 (https://www.acmicpc.net/problem/6198)
+10. 외계인의 기타연주(https://www.acmicpc.net/problem/2841)
 
 - 큐
 1. 뱀 (https://www.acmicpc.net/problem/3190)
