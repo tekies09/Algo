@@ -14,3 +14,7 @@
 2. 암호만들기 (https://www.acmicpc.net/problem/1759)
 3. 로또 (https://www.acmicpc.net/problem/6603)
 4. N-Queen (https://www.acmicpc.net/problem/9963)
+5. 감시피하기
+6. 부분수열의합
+7. 소문난칠공주
+8. 스도쿠
