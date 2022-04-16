@@ -8,6 +8,9 @@
 -분할정복
 1. 별찍기 10 (https://www.acmicpc.net/problem/2447)
 2. 박스채우기 (https://www.acmicpc.net/problem/1493)
+3. 종이의개수
+4. 색종이
+5. 쿼드트리
 
 -백트래킹
 1. SubSetSumByBackT 백트래킹을 이용한 부분집합의 합 구하기 
@@ -18,3 +21,5 @@
 6. 부분수열의합
 7. 소문난칠공주
 8. 스도쿠
+9. N과M
+10. 2048
