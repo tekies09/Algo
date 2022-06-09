@@ -7,3 +7,7 @@
 3. 벼락치기 (https://www.acmicpc.net/problem/14728)
 4. 앱 (https://www.acmicpc.net/problem/7579)
 5. 평범한배낭 (https://www.acmicpc.net/problem/12865)
+6. 안녕 (https://www.acmicpc.net/problem/1535)
+7. 양팔저울 (https://www.acmicpc.net/problem/2629)
+8. 호텔 (https://www.acmicpc.net/problem/1106)
+9. 수도배관공사 (https://www.acmicpc.net/problem/2073)
