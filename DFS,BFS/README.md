@@ -7,6 +7,10 @@
 1.  토마토 (https://www.acmicpc.net/problem/7576)
 2.  연구소 (https://www.acmicpc.net/problem/14502) 
 3.  BFSGraph.java 인접행렬을 이용한 너비우선탐색 구현
+4.  나이트의이동 (https://www.acmicpc.net/problem/7562)
+5.  보물섬 (https://www.acmicpc.net/problem/2589)
+6.  DSLR (https://www.acmicpc.net/problem/9019)
+7.  스타트택시 (https://www.acmicpc.net/problem/19238)
 
 - 깊이우선탐색
 
